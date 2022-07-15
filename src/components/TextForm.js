@@ -52,7 +52,7 @@ export default function TextForm(props) {
     // }
 
 
-    const [text, setText] = useState('Enter text here');
+    const [text, setText] = useState('');
     // const [wordCount, setWordCount] = useState(0);
     // text = "hgbfvbbhj" //wrong way to set text
     // setText("new text")
@@ -64,11 +64,11 @@ export default function TextForm(props) {
       <div className="mb-3"></div>
       
       <textarea className='form-control' value={text} onChange={handleOnChange} style={{backgroundColor: props.mode==='dark'?'#042743':'white',  color: props.mode==='dark'?'white':'#042743' }} id='myBox' rows="8"></textarea>
-      <button className="btn btn-primary my-2 mx-1" onClick={handleUpClick}>Convert to uppercase</button>
-      <button className="btn btn-primary mx-1" onClick={handleUpClick2}>Convert to lowercase</button>
-      <button className="btn btn-primary mx-1" onClick={clearBtn}>Clear text</button>
-      <button className="btn btn-primary mx-1" onClick={copyBtn}>Copy to clipboard</button>
-      <button className="btn btn-primary mx-1" onClick={reverseBtn}>Reverse Text</button>
+      <button disabled={text.length===0} className="btn btn-primary my-2 mx-1" onClick={handleUpClick}>Convert to uppercase</button>
+      <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleUpClick2}>Convert to lowercase</button>
+      <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={clearBtn}>Clear text</button>
+      <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={copyBtn}>Copy to clipboard</button>
+      <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={reverseBtn}>Reverse Text</button>
     </div>
     <div className="container my-3"  style={{color: props.mode==='dark'?'white':'#042743' }}>
         <h1>Your Text summary</h1>

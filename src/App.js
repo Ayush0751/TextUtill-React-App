@@ -28,12 +28,12 @@ function App() {
       setMode("light");
       document.body.style.backgroundColor = "white";
       showAlert("Light mode enabled", "success");
-      document.title = "TextUtill - Light Mode";
+      // document.title = "TextUtill - Light Mode";
     } else {
       setMode("dark");
       document.body.style.backgroundColor = "#042743";
       showAlert("Dark mode enabled", "success");
-      document.title = "TextUtill - Dark Mode";
+      // document.title = "TextUtill - Dark Mode";
     }
   };
   return (
@@ -61,7 +61,7 @@ function App() {
         <TextForm
           showAlert={showAlert}
           toggleMode={toggleMode}
-          heading="Enter the text to analyse: "
+          heading="Try Textutil - Word Counter, Character counter, Case convertor"
           mode={mode}
         />
         {/* } */}
